@@ -92,9 +92,9 @@ struct omap_vdd_dep_info omap34xx_vddmpu_dep_info[] = {
 #endif
 */
 #if 0
-#define OMAP3630_VDD_MPU_OPP50_UV		       942500
+#define OMAP3630_VDD_MPU_OPP50_UV	        942500
 #define OMAP3630_VDD_MPU_OPP100_UV		1150000
-#define OMAP3630_VDD_MPU_OPP120_UV		1275000
+#define OMAP3630_VDD_MPU_OPP120_UV		1265000
 #define OMAP3630_VDD_MPU_OPP1G_UV		1325000
 //#define OMAP3630_VDD_MPU_OPP1_1G_UV     1350000 
 #endif

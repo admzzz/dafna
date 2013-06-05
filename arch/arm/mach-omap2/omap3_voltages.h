@@ -13,7 +13,7 @@
 
 #define OMAP3630_VDD_MPU_OPP50_UV               942500
 #define OMAP3630_VDD_MPU_OPP100_UV              1150000
-#define OMAP3630_VDD_MPU_OPP120_UV              1275000
+#define OMAP3630_VDD_MPU_OPP120_UV              1265000
 /*#define OMAP3630_VDD_MPU_OPP1G_UV             1345000
 
 #define OMAP3630_VDD_CORE_OPP50_UV              962500
@@ -24,3 +24,4 @@
 
 #define OMAP3630_VDD_CORE_OPP50_UV              962500
 #define OMAP3630_VDD_CORE_OPP100_UV             1150000
+
