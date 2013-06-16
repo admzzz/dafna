@@ -122,6 +122,13 @@ config CPU_FREQ_DEFAULT_GOV_HOTPLUG
 	  the help section of the driver. Fallback governor will be the
 	  performance governor.
 
+config CPU_FREQ_DEFAULT_GOV_SMARTASS2
+	bool "smartass2"
+	select CPU_FREQ_GOV_SMARTASS2
+	select CPU_FREQ_GOV_PERFORMANCE
+	help
+	  Use the CPUFreq governor 'Smartass2' as default.
+
 config CPU_FREQ_DEFAULT_GOV_LIONHEART
 	bool "lionheart"
 	select CPU_FREQ_GOV_LIONHEART
@@ -133,6 +140,7 @@ config CPU_FREQ_DEFAULT_GOV_LIONHEART
 	  is very aggressive. When it comes to smoothness (not considering
 	  battery drain), a tuned conservative delivers more as compared to
 	  a tuned ondemand.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -254,6 +262,12 @@ config CPU_FREQ_GOV_HOTPLUG
 	  'ondemand' instead.
 
 	  If in doubt, say N.
+
+config CPU_FREQ_GOV_SMARTASS2
+	tristate "'smartass2' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'Smartass2' - a "slightly more agressive smartass" governor!
 
 config CPU_FREQ_GOV_LIONHEART
 	tristate "'lionheart' cpufreq governor"

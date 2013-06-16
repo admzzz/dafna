@@ -347,10 +347,12 @@ CHECK		= sparse
 
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
-CFLAGS_MODULE   =
+
+#CFLAGS_MODULE   =  -O2 -march=armv7-a -mtune=cortex-a8 --param l1-cache-line-size=16 --param l1-cache-size=16 --param l2-cache-size=256 -fmerge-all-constants -finline-functions -funswitch-loops -fpredictive-commoning -fgcse-after-reload -fipa-cp-clone -fno-gcse
+CFLAGS_MODULE   = -march=armv7-a -mtune=cortex-a8 --param l1-cache-line-size=16 --param l1-cache-size=16 --param l2-cache-size=256 -fmodulo-sched -fmodulo-sched-allow-regmoves -fmerge-all-constants -finline-functions -funswitch-loops -fpredictive-commoning -fgcse-after-reload -fipa-cp-clone -fno-gcse
 AFLAGS_MODULE   =
 LDFLAGS_MODULE  =
-CFLAGS_KERNEL	=
+CFLAGS_KERNEL	= -march=armv7-a -mtune=cortex-a8 --param l1-cache-line-size=16 --param l1-cache-size=16 --param l2-cache-size=256 -fmodulo-sched -fmodulo-sched-allow-regmoves -fmerge-all-constants -finline-functions -funswitch-loops -fpredictive-commoning -fgcse-after-reload -fipa-cp-clone -fno-gcse
 AFLAGS_KERNEL	=
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
 
@@ -368,8 +370,8 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
-		   -fno-delete-null-pointer-checks \
-		   -mno-unaligned-access  # line inserted for a try
+		   -fno-delete-null-pointer-checks  \
+       -mno-unaligned-access  # line inserted for a try 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
